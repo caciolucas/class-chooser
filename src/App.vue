@@ -1,5 +1,5 @@
 <template>
-  <h1>SIGAA Class Chooser</h1>
+  <h1>Class Chooser</h1>
   <FullCalendar :events="events" :options="options" style="width: 75%; margin:auto"/>
   <div class="p-grid">
     <div class="p-col-12">
