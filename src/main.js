@@ -27,6 +27,7 @@ import Dialog from 'primevue/dialog';
 import Toolbar from 'primevue/toolbar';
 import InputText from 'primevue/inputtext';
 import Fieldset from 'primevue/fieldset';
+import FullCalendar from 'primevue/fullcalendar';
 import ToastService from 'primevue/toastservice';
 import Toast from 'primevue/toast';
 
@@ -48,6 +49,9 @@ app.component('Dialog', Dialog);
 app.component('Toolbar', Toolbar);
 app.component('InputText', InputText);
 app.component('Fieldset', Fieldset);
+app.component('FullCalendar', FullCalendar);
 app.component('Toast', Toast);
+
+
 
 app.mount('#app')

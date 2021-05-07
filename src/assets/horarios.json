@@ -1,0 +1,66 @@
+{
+  "M1": {
+    "start": { "hours": 7, "minutes": 0 },
+    "end": { "hours": 7, "minutes": 50 }
+  },
+  "M2": {
+    "start": { "hours": 7, "minutes": 50 },
+    "end": { "hours": 8, "minutes": 40 }
+  },
+  "M3": {
+    "start": { "hours": 8, "minutes": 55 },
+    "end": { "hours": 9, "minutes": 45 }
+  },
+  "M4": {
+    "start": { "hours": 9, "minutes": 45 },
+    "end": { "hours": 10, "minutes": 35 }
+  },
+  "M5": {
+    "start": { "hours": 10, "minutes": 50 },
+    "end": { "hours": 11, "minutes": 40 }
+  },
+  "M6": {
+    "start": { "hours": 11, "minutes": 40 },
+    "end": { "hours": 12, "minutes": 30 }
+  },
+  "T1": {
+    "start": { "hours": 13, "minutes": 0 },
+    "end": { "hours": 13, "minutes": 50 }
+  },
+  "T2": {
+    "start": { "hours": 13, "minutes": 50 },
+    "end": { "hours": 14, "minutes": 40 }
+  },
+  "T3": {
+    "start": { "hours": 14, "minutes": 55 },
+    "end": { "hours": 15, "minutes": 45 }
+  },
+  "T4": {
+    "start": { "hours": 15, "minutes": 45 },
+    "end": { "hours": 16, "minutes": 35 }
+  },
+  "T5": {
+    "start": { "hours": 16, "minutes": 50 },
+    "end": { "hours": 17, "minutes": 40 }
+  },
+  "T6": {
+    "start": { "hours": 17, "minutes": 40 },
+    "end": { "hours": 18, "minutes": 30 }
+  },
+  "N1": {
+    "start": { "hours": 18, "minutes": 45 },
+    "end": { "hours": 19, "minutes": 35 }
+  },
+  "N2": {
+    "start": { "hours": 19, "minutes": 35 },
+    "end": { "hours": 20, "minutes": 25 }
+  },
+  "N3": {
+    "start": { "hours": 20, "minutes": 35 },
+    "end": { "hours": 21, "minutes": 25 }
+  },
+  "N4": {
+    "start": { "hours": 21, "minutes": 25 },
+    "end": { "hours": 22, "minutes": 15 }
+  }
+}
