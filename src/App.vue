@@ -11,7 +11,7 @@
         groupRowsBy="nome-componente"
         rowGroupMode="subheader"
         scrollHeight="45vh"
-        scrollable>
+        :scrollable="true"
         >
         <template #header>
 
@@ -20,11 +20,11 @@
               <i class="pi pi-search" />
               <InputText v-model="filters['global'].value" placeholder="Busque aqui" />
             </span>
-            <Button label="Todos os docentes" class="p-button-help" icon="fas fa-users" @click="getAllDocentes"></Button>
+            <Button label="Todos os docentes" class="p-button-primary" icon="fas fa-users" @click="confirmGetAllDocentes" :loading="loadingDocentes"></Button>
           </div>
         </template>
 
-        <Column header="Cod">
+        <Column header="Cod" style="width:100px" headerStyle="width:100px" bodyStyle="width:100px">
           <template #body="slotProps">
             <div style="width: 3rem">{{ slotProps.data['codigo-turma'] }}</div>
           </template>
@@ -54,7 +54,7 @@
         <Column headerStyle="width: 2rem">
           <template #body="slotProps">
             <Button v-if="!slotProps.data.docentes"
-                    class="p-button-help p-button-sm p-button-rounded" icon="fas fa-user-tie" label="Docentes"
+                    class="p-button-primary p-button-sm p-button-rounded" icon="fas fa-user-tie" label="Docentes"
                     @click="getDocentes(slotProps.data)"></Button>
             <Button v-if="!slotProps.data.events_id && slotProps.data.docentes" :disabled="!slotProps.data['descricao-horario']"
                     class="p-button-success p-button-sm p-button-rounded" icon="pi pi-plus" label="Adicionar"
@@ -276,6 +276,7 @@ export default {
   components: {},
   data() {
     return {
+      loadingDocentes: false,
       colors: {
         M: '#5A7D7C',
         T: '#A0C1D1',
@@ -401,24 +402,32 @@ export default {
 
   },
   methods: {
-
-    getAllDocentes() {
+    confirmGetAllDocentes() {
       this.$confirm.require({
         target: event.currentTarget,
         message: 'Os docentes serão recuperados um a um, quer prosseguir?',
         icon: 'pi pi-exclamation-triangle',
+        acceptClass: 'p-button-success',
+        rejectClass: 'p-button-danger p-button-oulined',
         accept: () => {
-          this.turmas.forEach((turma, i) => {
-            setTimeout(() => {
-              this.getDocentes(turma);
-            }, i * 500);
-          });
+          this.loadingDocentes = true;
+          this.getAllDocentes();
         },
         reject: () => {
           //callback to execute when user rejects the action
         }
       });
-
+    },
+    getAllDocentes(){
+      this.turmas.forEach((turma, i) => {
+        setTimeout(() => {
+          console.log(i)
+          this.getDocentes(turma);
+          if(i === this.turmas.length - 1){
+            this.loadingDocentes = false;
+          }
+        }, i * 500);
+      });
     },
     removeTurma(turma) {
       this.events = this.events.filter((evento) => !turma.events_id.includes(evento.id))

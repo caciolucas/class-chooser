@@ -36,7 +36,52 @@ import ConfirmPopup from 'primevue/confirmpopup';
 
 const app = createApp(App);
 
-app.use(PrimeVue, {ripple: true})
+app.use(PrimeVue, {
+    ripple: true,
+    locale: {
+        startsWith: 'Começa com',
+        contains: 'Contém',
+        notContains: 'Não contém',
+        endsWith: 'Termina com',
+        equals: 'Igual à',
+        notEquals: 'Diferente de',
+        noFilter: 'Sem filtro',
+        lt: 'Menor que',
+        lte: 'Menor ou igual à',
+        gt: 'Maior que',
+        gte: 'Maior ou igual à',
+        dateIs: 'Data é',
+        dateIsNot: 'Data não é',
+        dateBefore: 'Data é antes',
+        dateAfter: 'Data é depois',
+        clear: 'Limpar',
+        apply: 'Aplicar',
+        matchAll: 'Corresponde à todos',
+        matchAny: 'Corresponde à qualquer',
+        addRule: 'Adicionar regra',
+        removeRule: 'Remover regra',
+        accept: 'Sim',
+        reject: 'Não',
+        choose: 'Escolher',
+        upload: 'Carregar',
+        cancel: 'Cancelar',
+        dayNames: ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"],
+        dayNamesShort: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"],
+        dayNamesMin: ["D","S","T","Q","Q","S","S"],
+        monthNames: ["Janeiro","Fevereiro","Março","Abri","Maior","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"],
+        monthNamesShort: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun","Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+        today: 'Hoje',
+        weekHeader: 'Sem',
+        firstDayOfWeek: 0,
+        dateFormat: 'mm/dd/yy',
+        weak: 'Fraco',
+        medium: 'Médio',
+        strong: 'Forte',
+        passwordPrompt: 'Insira uma senha',
+        emptyFilterMessage: 'Nenhum resultado encontrado',
+        emptyMessage: 'Sem opções disponíveis'
+    }
+})
 app.use(VueAxios, axios) // 👈
 app.use(ToastService) // 
 app.use(ConfirmationService);
