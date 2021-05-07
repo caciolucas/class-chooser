@@ -30,12 +30,16 @@ import Fieldset from 'primevue/fieldset';
 import FullCalendar from 'primevue/fullcalendar';
 import ToastService from 'primevue/toastservice';
 import Toast from 'primevue/toast';
+import Chip from 'primevue/chip';
+import ConfirmationService from 'primevue/confirmationservice';
+import ConfirmPopup from 'primevue/confirmpopup';
 
 const app = createApp(App);
 
-app.use(PrimeVue)
+app.use(PrimeVue, {ripple: true})
 app.use(VueAxios, axios) // 👈
 app.use(ToastService) // 
+app.use(ConfirmationService);
 
 
 app.component('Card', Card);
@@ -51,7 +55,8 @@ app.component('InputText', InputText);
 app.component('Fieldset', Fieldset);
 app.component('FullCalendar', FullCalendar);
 app.component('Toast', Toast);
-
+app.component('Chip', Chip);
+app.component('ConfirmPopup', ConfirmPopup)
 
 
 app.mount('#app')
